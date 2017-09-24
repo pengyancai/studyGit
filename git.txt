@@ -43,7 +43,10 @@ ssh-keygen -t rsa -C "pfkue126@126.com"
 2、登陆github->setting->SSH and GPG keys->new ssh key->输入自己命名的标题->输入公有密钥id_rsa.pub的内容
 3、关联远程仓库git remote add origin https://github.com/pengyancai/threejs.git
 git push -u origin master
-本地作了提交，就可以通过命令：git push origin master
+本地作了提交，就可以通过命令：
+git push origin master（把master改成newBranch就是推送名称为newBranch的分支到远程）
+
+git checkout -b dev origin/dev
 
 （git@github.com:pengyancai/maxscript.git）
 克隆仓库
@@ -56,3 +59,25 @@ git branch查看当前分支
 git merge newBranch1合并到当前分支
 git branch -d newBranch1删除分支
 修改两个分支相同的地方，导致分支无法自动合并，需要手动合并
+
+用带参数的git log也可以看到分支的合并情况：
+git log --graph --pretty=oneline --abbrev-commit
+
+git merge --no-ff -m "merge with no-ff" dev
+合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并
+
+git stash可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
+开一个分支修复bug修复完之后，回到原先的分支
+git stash list查看储藏列表
+两个方法恢复到原先状态：1、git stash apply恢复后不删除stash内容,
+需要使用git stash drop来删除；2、git stash pop恢复并删除stash内容
+git stash apply stash@{0}恢复到指定的stash
+
+分支没有合并就删除，必须使用git branch -D branchName才能强制删除
+
+git remote查看远程仓库
+git remote -v显示更详细信息
+
+两个人对远程分支的文件做了修改，后者推送失败
+git pull把最新的提交抓下来，在本地合并，解决冲突，再推送
+git branch --set-upstream dev origin/dev指定本地dev分支和远程origin/dev分支的链接
