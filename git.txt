@@ -1,0 +1,55 @@
+1、安装Git-2.14.1-64-bit.exe
+2、git-bash.exe
+3、本机器所有git都是用这个配置
+git config --global user.name "pengyancai"
+git config --global user.email "pfkue126@126.com"
+4、设置目录
+cd "d:/sadf/asd"
+git init
+git add xxx.txt(git add .表示所有文件)
+git commit -m "提交说明"(文件提交到仓库)
+
+pwd显示当前目录
+ls -ah显示隐藏目录
+
+git init //把这个目录变成Git可以管理的仓库
+git add README.md //文件添加到仓库
+git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 
+git commit -m "first commit" //把文件提交到仓库
+git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库
+git push -u origin master //把本地库的所有内容推送到远程库上
+
+git status命令可以让我们时刻掌握仓库当前的状态，上面的命令告诉我们，readme.txt被修改过了，但还没有准备提交的修改。
+git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式
+用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别
+
+git log可以查看提交历史，以便确定要回退到哪个版本。
+如果嫌输出信息太多，看得眼花缭乱的，可以试试加上--pretty=oneline参数：
+git log --pretty=oneline
+git reflog查看命令历史，以便确定要回到未来的哪个版本。
+git reset --hard HEAD^
+上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
+$ git reset --hard 3628164根据commit id回滚版本
+cat readme.txt查看文件
+git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销
+git reset HEAD readme.txt可以把暂存区的修改撤销掉（unstage），重新放回工作区
+已经add暂存区，还没有commit的
+git rm test.txt删除文件
+
+远程仓库
+1、创建SSH Key
+ssh-keygen -t rsa -C "pfkue126@126.com"
+会创建两个文件，私有密钥id_rsa和公有密钥id_rsa.pub
+2、登陆github->setting->SSH and GPG keys->new ssh key->输入自己命名的标题->输入公有密钥id_rsa.pub的内容
+3、关联远程仓库git remote add origin https://github.com/pengyancai/threejs.git
+git push -u origin master
+本地作了提交，就可以通过命令：git push origin master
+
+（git@github.com:pengyancai/maxscript.git）
+克隆仓库
+git clone https://github.com/pengyancai/maxscript.git
+
+创建分支
+git checkout -b dev(branch name)
+相当于创建分支：git branch dev;切换分支：git checkout dev
+git branch查看当前分支
