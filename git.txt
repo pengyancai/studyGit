@@ -54,3 +54,4 @@ git checkout -b dev(branch name)
 相当于创建分支：git branch dev;切换分支：git checkout dev
 git branch查看当前分支
 git merge newBranch1合并到当前分支
+7898
