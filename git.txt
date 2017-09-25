@@ -100,3 +100,6 @@ git remote show [remote-name] 查看某个远程仓库的详细信息
 1、git clone https://github/pengyancai/studyGit.git
 2、cd 到有.git文件的目录
 3、git remote add origin https://github/pengyancai/studyGit.git
+
+删除本地仓库
+find . -name ".git" | xargs rm -Rf
