@@ -97,9 +97,9 @@ git push origin --tags一次性推送全部尚未推送的标签到远程
 git remote show [remote-name] 查看某个远程仓库的详细信息
 
 从远程克隆仓库，并且关联
-1、git clone https://github/pengyancai/studyGit.git
+1、git clone https://github.com/pengyancai/studyGit.git
 2、cd 到有.git文件的目录
-3、git remote add origin https://github/pengyancai/studyGit.git
+3、git remote add origin https://github.com/pengyancai/studyGit.git
 
 删除本地仓库
 find . -name ".git" | xargs rm -Rf
