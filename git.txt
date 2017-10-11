@@ -103,3 +103,8 @@ git remote show [remote-name] 查看某个远程仓库的详细信息
 
 删除本地仓库
 find . -name ".git" | xargs rm -Rf
+
+.gitignore失效的解决方法，删除缓存再提交
+git rm -r --cached .
+git add .
+git commit -m "删除缓存再提交"
