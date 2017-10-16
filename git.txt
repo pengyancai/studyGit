@@ -80,7 +80,7 @@ git remote -v显示更详细信息
 git remote rm origin删除关联的origin远程库
 
 两个人对远程分支的文件做了修改，后者推送失败
-git pull把最新的提交抓下来，在本地合并，解决冲突，再推送
+git pull origin master 把最新的提交抓下来，在本地合并，解决冲突，再推送
 git branch --set-upstream dev origin/dev指定本地dev分支和远程origin/dev分支的链接
 
 标签管理
