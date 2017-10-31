@@ -108,3 +108,5 @@ find . -name ".git" | xargs rm -Rf
 git rm -r --cached .
 git add .
 git commit -m "删除缓存再提交"
+
+退出 按q
