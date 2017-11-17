@@ -109,4 +109,10 @@ git rm -r --cached .
 git add .
 git commit -m "删除缓存再提交"
 
+git reset --hard 回滚到前一个版本
+git log --name-only -1 查看上一次交的文件
+
 退出 按q
+
+回滚到commitId的版本
+git reset --hard commitID
